@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WpfTest.TileProperty"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTest"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Orientation="Horizontal" Margin="0,0,470,235">
+        <Label x:Name="label" Content="Symbol Code : "/>
+        <ListBox x:Name="TestList" RenderTransformOrigin="0.5,0.5" Width="256">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+            <ListBox.ItemTemplate>
+                <DataTemplate/>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <TextBox Margin="0,24,0,461" Width="192" RenderTransformOrigin="0.716,-0.5" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.121"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.462"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+            
+        </TextBox>
+    </StackPanel>
+
+</UserControl>

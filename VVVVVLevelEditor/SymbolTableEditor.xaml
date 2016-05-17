@@ -1,0 +1,23 @@
+﻿<Window x:Class="VVVVVLevelEditor.SymbolTableEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VVVVVLevelEditor"
+        mc:Ignorable="d"
+        Title="SymbolTableEditor" Height="300" Width="300" ResizeMode="NoResize">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File" >
+                <MenuItem Header="Update Table" Click="UpdateSymbolTable"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" x:Name="EditorScroller">
+            <StackPanel>
+                <Grid x:Name="SymbolTableEditorGrid" ScrollViewer.CanContentScroll="True">
+
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

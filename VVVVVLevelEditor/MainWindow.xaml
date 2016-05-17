@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest"
+        xmlns:control ="clr-namespace:WpfTest"
+        mc:Ignorable="d"
+        Title="VVVVVV" Height="870" Width="900" 
+
+        x:Name="MainWindowElement" ResizeMode="CanResize" Icon="Resources/PlayerStart.png" SizeChanged="WindowResize" Drop="OnFileDrop" AllowDrop="True">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" x:Name="MainMenu">
+            <MenuItem Header="File">
+                <MenuItem Header="Save Level" InputGestureText="Ctrl+S" Click="SaveLevelHandler"></MenuItem>
+                <MenuItem Header="Save As.."  Click="SaveAsHandler"></MenuItem>
+                <MenuItem Header="Load Level" Click="LoadLevelHandler"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="UndoHandler" x:Name="UndoOption" ></MenuItem>
+                <MenuItem Header="Clear Level" Click="ClearLevelHandler"></MenuItem>
+                <MenuItem Header="Changed Dimensions" Click="OpenRowColumnChanger"></MenuItem>
+                <MenuItem Header="Edit Symbol Table" Click="OpenSymbolTableEditor"></MenuItem>
+                </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+            <ScrollViewer x:Name="TileScroller" Width="80"  >
+                <WrapPanel x:Name="EditorPanel" Height="{Binding ElementName=TileScroller,Path=Height}" Margin="0,0,0,211" ScrollViewer.CanContentScroll="True"   >
+                </WrapPanel>
+            </ScrollViewer>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" x:Name="TileMapScroller">
+                
+                <WrapPanel x:Name="GridWrap">
+                </WrapPanel>
+            </ScrollViewer>
+        
+        </StackPanel>
+    </DockPanel>
+</Window>
+    
